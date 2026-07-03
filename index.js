@@ -1,6 +1,4 @@
 function add(){
-    const parentDiv = document.getElementById("right-section-child");
-const newElement = document.createElement('div')
-newElement.innerHTML="hello"
-
+const parent = document.getElementById("modal")
+    parent.style.display= "flex"
 }

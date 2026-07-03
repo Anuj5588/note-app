@@ -86,6 +86,7 @@ cursor: pointer;
 }
 
 #hero-section{
+  display: flex;
     background-color: #F7F8FC;
        background-image: radial-gradient(
         circle,
@@ -98,6 +99,29 @@ cursor: pointer;
 }
 
 .hero-right-section{
-   
-    opacity: 0.4;
+   display: flex;
+   z-index: 0;
+  width: 100%;
+   justify-content: center;
+   align-items: center;
+
+}
+
+#modal{
+  display: none;
+  width: 400px;
+  height: 500px;
+  background-color: white;
+  z-index: 999;
+}
+
+.heading-btn{
+  display: flex;
+  background-color: #f2f2f3;
+  width: 370px;
+  justify-content:space-between;
+  padding: 10px 15px;
+  font-size: 18px;
+
+
 }
