@@ -109,7 +109,7 @@ cursor: pointer;
 
 #modal{
   display: none;
-  width: 400px;
+  width: 350px;
   height: 500px;
   background-color: white;
   z-index: 999;
@@ -118,10 +118,21 @@ cursor: pointer;
 .heading-btn{
   display: flex;
   background-color: #f2f2f3;
-  width: 370px;
-  justify-content:space-between;
-  padding: 10px 15px;
-  font-size: 18px;
+  box-sizing: border-box;
+  width:350px;
+  justify-content: space-between;
+  padding: 10px 20px;
 
+
+}
+#title{
+
+
+}
+#modal-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
 }
