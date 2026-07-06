@@ -109,7 +109,7 @@ cursor: pointer;
 
 #modal{
   display: none;
-  width: 350px;
+  width: 450px;
   height: 500px;
   background-color: white;
   z-index: 999;
@@ -119,20 +119,39 @@ cursor: pointer;
   display: flex;
   background-color: #f2f2f3;
   box-sizing: border-box;
-  width:350px;
+  width:450px;
   justify-content: space-between;
   padding: 10px 20px;
 
 
 }
-#title{
-
-
+input{
+  all: unset;
 }
-#modal-content{
+
+.input{
+  border: 1px solid rgb(190, 183, 183);
+  padding: 10px;
+  border-radius: 10px;
+  width: 400px;
+  outline-offset: 10px;
+}
+
+#input-parent{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
 
 }
+#note {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none; /* Prevent user from resizing */
+  outline: none;
+}
+
+
