@@ -109,8 +109,8 @@ cursor: pointer;
 
 #modal{
   display: none;
-  width: 450px;
-  height: 500px;
+  width: 500px;
+  min-height: 600px;
   background-color: white;
   z-index: 999;
 }
@@ -119,9 +119,12 @@ cursor: pointer;
   display: flex;
   background-color: #f2f2f3;
   box-sizing: border-box;
-  width:450px;
+  width:500px;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 15px 20px;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 30px;
 
 
 }
@@ -150,8 +153,97 @@ input{
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  resize: none; /* Prevent user from resizing */
+  resize: none; 
   outline: none;
 }
+#buttons{
+  display: flex;
+justify-content:end;
+padding: 20px;
 
+align-items: end;
+height:200px;
+  gap: 40px;
+  margin-top: 25px;
+
+
+}
+.btn{
+ 
+}
+.btn-1{
+  border: 1px solid gray;
+  display: flex;
+  font-style: poppins;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffff;
+  background-color: #17e45b;
+}
+.btn-2{
+   border: 1px solid gray;
+  display: flex;
+  font-style: poppins;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffff;
+  background-color: rgb(245, 5, 5);
+}
+
+
+
+.colors{
+    display:flex;
+    gap:12px;
+    margin-top:10px;
+}
+
+.color{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.yellow{
+    background:#FFD54F;
+}
+
+.blue{
+    background:#4285F4;
+}
+
+.green{
+    background:#66BB6A;
+}
+
+.red{
+    background:#EF6C6C;
+}
+
+.purple{
+    background:#9575CD;
+}
 
