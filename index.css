@@ -110,7 +110,7 @@ cursor: pointer;
 #modal{
   display: none;
   width: 500px;
-  min-height: 600px;
+  max-height: 700px;
   background-color: white;
   z-index: 999;
 }
@@ -159,12 +159,10 @@ input{
 #buttons{
   display: flex;
 justify-content:end;
-padding: 20px;
-
+padding:0px 10px 20px 0px;
 align-items: end;
 height:200px;
   gap: 40px;
-  margin-top: 25px;
 
 
 }
@@ -186,6 +184,13 @@ height:200px;
   color: #ffff;
   background-color: #17e45b;
 }
+.save{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:150px;
+  background-color: #4a89e8;
+}
 .btn-2{
    border: 1px solid gray;
   display: flex;
@@ -206,6 +211,7 @@ height:200px;
 
 .colors{
     display:flex;
+    justify-content: center;
     gap:12px;
     margin-top:10px;
 }
@@ -247,3 +253,15 @@ height:200px;
     background:#9575CD;
 }
 
+.choose-color{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#notes{
+  display: flex;
+  width: 400px;
+  height: 400px;
+  flex-direction: column;
+}
