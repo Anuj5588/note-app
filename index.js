@@ -1,7 +1,6 @@
 function add(){
 const parent = document.getElementById("modal")
     parent.style.display= "flex"
-<<<<<<< HEAD
 }
 
 const savebtn = document.querySelector(".save")
@@ -40,7 +39,3 @@ console.log(e.target.classList)
 
 
 
-=======
-console.log(parent)
-}
->>>>>>> 650b52caf9a19a9cf18cd87a76c25ac35f4e2343
