@@ -259,7 +259,7 @@ height:200px;
   margin-top: 50px;
 }
 
-#notes{
+.notes-card{
   display: flex;
   width: 400px;
   height: 400px;

@@ -6,35 +6,36 @@ const parent = document.getElementById("modal")
 const savebtn = document.querySelector(".save")
 console.log(savebtn)
 
-console.log("h0")
+let selectedColor = "#5c1414";
+const colors = document.querySelector(".colors");
+
+colors.addEventListener("click", (e) => {
+    if (e.target.classList.contains("color")) {
+        selectedColor = e.target.dataset.color;
+    }
+});
+
 savebtn.addEventListener("click",()=>{
 const title = document.querySelector("input").value
 const discription = document.querySelector("#note").value
-const notesParent = document.getElementById("notes")
+const notesParent = document.getElementById("notes-p")
+const noteschild = document.createElement("div")
+noteschild.classList="notes-card"
+noteschild.style.backgroundColor = selectedColor
 const notesContentTitle = document.createElement('div')
 const notesContentdiscription = document.createElement('div')
-notesContentTitle.textContent= title
-notesContentdiscription.textContent=discription
-console.log(discription)
-notesParent.appendChild(notesContentTitle);
-notesParent.appendChild(notesContentdiscription);
-const colors = document.querySelector(".colors");
+notesContentTitle.textContent = title
+notesContentdiscription.textContent = discription
+noteschild.appendChild(notesContentTitle)
+noteschild.appendChild(notesContentdiscription);
+notesParent.appendChild(noteschild);
+
 const parent = document.getElementById("modal")
     parent.style.display= "none"
 
 })
 
-const colors = document.querySelector(".colors");
-const notes = document.getElementById("notes");
 
-colors.addEventListener("click", (e) => {
-console.log(e.target.classList)
-    if (e.target.classList.contains("color")) {
-        const selectedColor = e.target.dataset.color;
-        notes.style.backgroundColor = selectedColor;
-    }
-
-});
 
 
 
