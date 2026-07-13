@@ -6,7 +6,7 @@ const parent = document.getElementById("modal")
 const savebtn = document.querySelector(".save")
 console.log(savebtn)
 
-let selectedColor = "#5c1414";
+let selectedColor = "#1ea6f5";
 const colors = document.querySelector(".colors");
 
 colors.addEventListener("click", (e) => {
@@ -24,8 +24,10 @@ noteschild.classList="notes-card"
 noteschild.style.backgroundColor = selectedColor
 const notesContentTitle = document.createElement('div')
 const notesContentdiscription = document.createElement('div')
-notesContentTitle.textContent = title
-notesContentdiscription.textContent = discription
+notesContentTitle.textContent = title;
+notesContentTitle.classList.add("title");
+notesContentdiscription.textContent = discription;
+notesContentdiscription.classList.add("discription");
 noteschild.appendChild(notesContentTitle)
 noteschild.appendChild(notesContentdiscription);
 notesParent.appendChild(noteschild);
@@ -35,6 +37,7 @@ const parent = document.getElementById("modal")
 
 })
 
+console.log("Hello")
 
 
 

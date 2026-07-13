@@ -138,6 +138,7 @@ input{
   border-radius: 10px;
   width: 400px;
   outline-offset: 10px;
+ 
 }
 
 #input-parent{
@@ -260,8 +261,37 @@ height:200px;
 }
 
 .notes-card{
-  display: flex;
-  width: 400px;
+ border-radius: 10px;
+  width:400px;
   height: 400px;
-  flex-direction: column;
+ 
 }
+#notes-p{
+display: flex;
+padding: 50px;
+gap: 50px;
+justify-content: space-around;
+flex-wrap: wrap;
+width: 100%;
+height: 100vh
+}
+
+.title{
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  font-size: 35px;
+  margin-top: 50px;
+ text-align: center;
+ border-radius: 2px soild rgb(26, 24, 24);
+ color: white;
+ padding: 20px;
+}
+
+.discription {
+   font-weight: 600;
+  font-family: Poppins, sans-serif;
+  font-size:20px;
+  padding: 20px;
+  
+} 
+
