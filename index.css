@@ -295,3 +295,14 @@ height: 100vh
   
 } 
 
+.edit-delete-p{
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  background-color: rgb(212, 207, 207);
+  border: 1px solid white;
+  padding: 20px 0px;
+  border-radius: 10 ;
+margin-top: 1px;
+  height: 10px;
+}

@@ -20,7 +20,16 @@ const title = document.querySelector("input").value
 const discription = document.querySelector("#note").value
 const notesParent = document.getElementById("notes-p")
 const noteschild = document.createElement("div")
-noteschild.classList="notes-card"
+const noteCardChild= document.createElement("div")
+const editButton = document.createElement("img")
+const deleteButton = document.createElement("img")
+editButton.alt= "E"
+deleteButton.alt="D"
+noteCardChild.classList.add("edit-delete-p")
+noteCardChild.appendChild(editButton)
+noteCardChild.appendChild(deleteButton)
+noteschild.classList.add("notes-card")
+noteschild.appendChild(noteCardChild)
 noteschild.style.backgroundColor = selectedColor
 const notesContentTitle = document.createElement('div')
 const notesContentdiscription = document.createElement('div')
