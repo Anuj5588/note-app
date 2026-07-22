@@ -1,3 +1,10 @@
+
+function add(){
+    const parent = document.getElementById("modal");
+    parent.style.display="flex"
+}
+
+
 let editingCardId = null;
 
 const savebtn = document.querySelector(".save");
@@ -20,13 +27,14 @@ icon.style.fontSize = "20px";
 });
 
 savebtn.addEventListener("click", () => {
-
+console.log("hello")
     const title = document.querySelector("input").value;
     const description = document.querySelector("#note").value;
 
+
     // ---------------- EDIT ----------------
     if (editingCardId) {
-console.log(editingCardId)
+
         const card = document.querySelector(
             `[data-id="${editingCardId}"]`
         );
@@ -57,9 +65,10 @@ console.log(editingCardId)
         // Create NEW buttons for every card
         const editButton = document.createElement("img");
         const deleteButton = document.createElement("img");
-
-        editButton.src = "edit.png";       
-        deleteButton.src = "delete.png";  
+editButton.classList.add("edit-button")
+deleteButton.classList.add("delete-button")
+        editButton.src = "assets/icon/pencil.png";       
+        deleteButton.src = "assets/icon/trash-bin.png";  
 
         editButton.alt = "Edit";
         deleteButton.alt = "Delete";
@@ -76,6 +85,7 @@ console.log(editingCardId)
         const notesContentDescription = document.createElement("div");
         notesContentDescription.classList.add("discription");
         notesContentDescription.textContent = description;
+      
 
         noteschild.appendChild(notesContentTitle);
         noteschild.appendChild(notesContentDescription);
@@ -118,4 +128,5 @@ console.log(editingCardId)
 
     // Close Modal
     document.getElementById("modal").style.display = "none";
+
 });

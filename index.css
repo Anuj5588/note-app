@@ -108,9 +108,9 @@ cursor: pointer;
 }
 
 #modal{
- 
   width: 500px;
   max-height: 700px;
+  display:none;
   background-color: white;
   z-index: 999;
 }
@@ -159,7 +159,7 @@ input{
 }
 #buttons{
   display: flex;
-justify-content:end;
+justify-content:center;
 padding:0px 10px 20px 0px;
 align-items: end;
 height:200px;
@@ -261,48 +261,112 @@ height:200px;
 }
 
 .notes-card{
- border-radius: 10px;
-  width:400px;
-  height: 400px;
- 
+    width:300px;
+    height:300px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    transition:.3s ease;
+}
+
+.notes-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 22px 40px rgba(0,0,0,.22);
 }
 #notes-p{
 display: flex;
 padding: 50px;
 gap: 50px;
-justify-content: space-around;
 flex-wrap: wrap;
-width: 100%;
-height: 100vh
+
+
 }
 
 .title{
-  font-weight: 600;
-  font-family: Poppins, sans-serif;
-  font-size: 35px;
-  margin-top: 50px;
- text-align: center;
- border-radius: 2px soild rgb(26, 24, 24);
- color: white;
- padding: 20px;
+
+    font-size:32px;
+    font-weight:700;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 20px 15px;
+
+    margin:0;
 }
 
-.discription {
-   font-weight: 600;
-  font-family: Poppins, sans-serif;
-  font-size:20px;
-  padding: 30px;
-  
-} 
+.discription{
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:400;
+
+    line-height:1.8;
+
+    padding:10px 30px 35px;
+
+    word-break:break-word;
+}
 
 .edit-delete-p{
   display: flex;
-  justify-content: end;
-  gap: 20px;
+  justify-content:end;
+  align-items: center;
+  gap: 10px;
   background-color: rgb(212, 207, 207);
-  border: 1px solid white;
-  padding: 20px 0px;
-  border-radius: 10 ;
-margin-top: 1px;
-  height: 10px;
+ margin: 0px;
+ padding: 0px 10px;
+ height: 50px;
+
+}
+.delete-button{
+    width:20px;
+    height:20px;
+    cursor:pointer;
+
+    padding:10px;
+    border-radius:50%;
+
+    transition:.3s;
+}
+
+.delete-button:hover{
+    background:#ff4b5c;
+}
+
+.edit-button{
+    width:20px;
+    height:20px;
+    cursor:pointer;
+
+    padding:8px;
+    border-radius: 50px;
+
+    transition:.3s;
+}
+
+.edit-button:hover{
+    background:#4a89e8;
+}
+
+.close> img{
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+ 
+}
+.close{
+height: 50px;
+width: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+    border-radius: 50%;
+    transition:.3s;
+}
+.close:hover{
+  background:#e21234;
 }
