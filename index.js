@@ -3,7 +3,8 @@ function add(){
     const parent = document.getElementById("modal");
     parent.style.display="flex"
 }
-
+const ul = document.createElement("ul");
+ul.classList.add("description");
 
 let editingCardId = null;
 
@@ -82,9 +83,20 @@ deleteButton.classList.add("delete-button")
         notesContentTitle.classList.add("title");
         notesContentTitle.textContent = title;
 
-        const notesContentDescription = document.createElement("div");
-        notesContentDescription.classList.add("discription");
-        notesContentDescription.textContent = description;
+  const notesContentDescription = document.createElement("ul");
+notesContentDescription.classList.add("description");
+
+// Create one bullet for each new line
+description.split("\n").forEach(item => {
+    if (item.trim() !== "") {
+        const li = document.createElement("li");
+        li.textContent = item.trim();
+        notesContentDescription.appendChild(li);
+    }
+});
+
+noteschild.appendChild(notesContentTitle);
+noteschild.appendChild(notesContentDescription);
       
 
         noteschild.appendChild(notesContentTitle);
