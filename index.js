@@ -1,54 +1,121 @@
-function add(){
-const parent = document.getElementById("modal")
-    parent.style.display= "flex"
-}
+let editingCardId = null;
 
-const savebtn = document.querySelector(".save")
-console.log(savebtn)
-
+const savebtn = document.querySelector(".save");
+ const icon = document.createElement("i");
 let selectedColor = "#1ea6f5";
+
 const colors = document.querySelector(".colors");
 
 colors.addEventListener("click", (e) => {
+
+icon.textContent = "✓";
+icon.style.color = "white";
+icon.style.fontSize = "20px";
+    const checkColor = e.target
+    checkColor.appendChild(icon)
+  
     if (e.target.classList.contains("color")) {
         selectedColor = e.target.dataset.color;
     }
 });
 
-savebtn.addEventListener("click",()=>{
-const title = document.querySelector("input").value
-const discription = document.querySelector("#note").value
-const notesParent = document.getElementById("notes-p")
-const noteschild = document.createElement("div")
-const noteCardChild= document.createElement("div")
-const editButton = document.createElement("img")
-const deleteButton = document.createElement("img")
-editButton.alt= "E"
-deleteButton.alt="D"
-noteCardChild.classList.add("edit-delete-p")
-noteCardChild.appendChild(editButton)
-noteCardChild.appendChild(deleteButton)
-noteschild.classList.add("notes-card")
-noteschild.appendChild(noteCardChild)
-noteschild.style.backgroundColor = selectedColor
-const notesContentTitle = document.createElement('div')
-const notesContentdiscription = document.createElement('div')
-notesContentTitle.textContent = title;
-notesContentTitle.classList.add("title");
-notesContentdiscription.textContent = discription;
-notesContentdiscription.classList.add("discription");
-noteschild.appendChild(notesContentTitle)
-noteschild.appendChild(notesContentdiscription);
-notesParent.appendChild(noteschild);
+savebtn.addEventListener("click", () => {
 
-const parent = document.getElementById("modal")
-    parent.style.display= "none"
+    const title = document.querySelector("input").value;
+    const description = document.querySelector("#note").value;
 
-})
+    // ---------------- EDIT ----------------
+    if (editingCardId) {
+console.log(editingCardId)
+        const card = document.querySelector(
+            `[data-id="${editingCardId}"]`
+        );
 
-console.log("Hello")
+        card.querySelector(".title").textContent = title;
+        card.querySelector(".discription").textContent = description;
+        card.style.backgroundColor = selectedColor;
 
+        editingCardId = null;
 
+    }
 
+    // ---------------- CREATE ----------------
+    else {
 
+        const noteId = Date.now();
 
+        const notesParent = document.getElementById("notes-p");
+
+        const noteschild = document.createElement("div");
+        noteschild.classList.add("notes-card");
+        noteschild.dataset.id = noteId;
+        noteschild.style.backgroundColor = selectedColor;
+
+        const noteCardChild = document.createElement("div");
+        noteCardChild.classList.add("edit-delete-p");
+
+        // Create NEW buttons for every card
+        const editButton = document.createElement("img");
+        const deleteButton = document.createElement("img");
+
+        editButton.src = "edit.png";       
+        deleteButton.src = "delete.png";  
+
+        editButton.alt = "Edit";
+        deleteButton.alt = "Delete";
+
+        noteCardChild.appendChild(editButton);
+        noteCardChild.appendChild(deleteButton);
+
+        noteschild.appendChild(noteCardChild);
+
+        const notesContentTitle = document.createElement("div");
+        notesContentTitle.classList.add("title");
+        notesContentTitle.textContent = title;
+
+        const notesContentDescription = document.createElement("div");
+        notesContentDescription.classList.add("discription");
+        notesContentDescription.textContent = description;
+
+        noteschild.appendChild(notesContentTitle);
+        noteschild.appendChild(notesContentDescription);
+
+        notesParent.appendChild(noteschild);
+
+        // ------------ EDIT EVENT ------------
+        editButton.addEventListener("click", function () {
+
+            const card = this.closest(".notes-card");
+
+            editingCardId = card.dataset.id;
+
+            document.querySelector("input").value =
+                card.querySelector(".title").textContent;
+
+            document.querySelector("#note").value =
+                card.querySelector(".discription").textContent;
+
+            selectedColor = card.style.backgroundColor;
+
+            document.getElementById("modal").style.display = "block";
+        });
+
+        // ------------ DELETE EVENT ------------
+        deleteButton.addEventListener("click", function () {
+
+            const card = this.closest(".notes-card");
+
+            card.remove();
+
+        });
+
+    }
+
+    // Clear Inputs
+    document.querySelector("input").value = "";
+    document.querySelector("#note").value = "";
+    icon.textContent=""
+
+    // Close Modal
+    document.getElementById("modal").style.display = "none";
+});
