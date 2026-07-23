@@ -1,6 +1,6 @@
-
+ const parent = document.getElementById("modal");
 function add(){
-    const parent = document.getElementById("modal");
+   
     parent.style.display="flex"
 }
 const ul = document.createElement("ul");
@@ -142,3 +142,10 @@ noteschild.appendChild(notesContentDescription);
     document.getElementById("modal").style.display = "none";
 
 });
+
+const closeModal = document.querySelector(".close");
+
+closeModal.addEventListener("click",()=>{
+    parent.style.display="none"
+
+})
